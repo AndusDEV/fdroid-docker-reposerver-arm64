@@ -1,6 +1,8 @@
 # build the F-Droid repository
 FROM ubuntu:22.04
-RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get update && \
+ENV TZ=Etc/UTC
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && \
     apt-get install -y git curl python3-pip python3-setuptools python3-wheel python3-dev \
     libssl-dev libffi-dev build-essential zlib1g-dev liblzma-dev libbz2-dev libreadline-dev \
     libsqlite3-dev libncurses5-dev libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
